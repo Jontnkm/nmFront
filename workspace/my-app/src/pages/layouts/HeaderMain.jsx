@@ -1,6 +1,6 @@
 function HeaderMain() {
     return <>
-        header area
+        
     </>;
 }
 

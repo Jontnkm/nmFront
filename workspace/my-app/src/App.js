@@ -19,7 +19,7 @@ import BoardDetail from './pages/memory/BoardDetail';
 import Consult from './pages/memory/Board';
 import Location from './pages/memory/Board';
 
-import './App.css';
+import './pages/modules/default.scss';
 
 function App() {
   return (
@@ -28,21 +28,21 @@ function App() {
         <Route path='/' element={<Home/>}></Route>
 
         <Route path='/about' element={<About/>}></Route>
-        <Route path='/Culture' element={<Culture/>}></Route>
-        <Route path='/CultureDetail' element={<CultureDetail/>}></Route>
-        <Route path='/Professional' element={<Professional/>}></Route>
+        <Route path='/culture' element={<Culture/>}></Route>
+        <Route path='/cultureDetail' element={<CultureDetail/>}></Route>
+        <Route path='/professional' element={<Professional/>}></Route>
 
-        <Route path='/Diary' element={<Diary/>}></Route>
-        <Route path='/Tax' element={<Tax/>}></Route>
-        <Route path='/Transfer' element={<Transfer/>}></Route>
+        <Route path='/diary' element={<Diary/>}></Route>
+        <Route path='/tax' element={<Tax/>}></Route>
+        <Route path='/transfer' element={<Transfer/>}></Route>
 
-        <Route path='/Education' element={<Education/>}></Route>
+        <Route path='/education' element={<Education/>}></Route>
 
-        <Route path='/Board' element={<Board/>}></Route>
-        <Route path='/BoardDetail' element={<BoardDetail/>}></Route>
+        <Route path='/board' element={<Board/>}></Route>
+        <Route path='/boardDetail' element={<BoardDetail/>}></Route>
 
-        <Route path='/Consult' element={<Consult/>}></Route>
-        <Route path='/Location' element={<Location/>}></Route>
+        <Route path='/consult' element={<Consult/>}></Route>
+        <Route path='/location' element={<Location/>}></Route>
       </Routes>
     </Router>
   );
