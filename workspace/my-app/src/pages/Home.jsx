@@ -1,25 +1,28 @@
 import HeaderMain from "./layouts/HeaderMain";
 import Footer from "./layouts/Footer";
 
-import './modules/main.scss';
+import styles from './modules/home.module.scss';
 
 function Home() {
     return <>
         <HeaderMain></HeaderMain>
-        <div className="mainCont01">
+        <div className={styles.mainCont01}>
             <img src="/images/main/mainCont01_bg.png" alt="" />
+            <div className={styles.txtPart}>
+                텍스트 테스팅
+            </div>
         </div>
-        <div className="mainCont02">
-            test02
+        <div className={styles.mainCont02}>
+            service area
         </div>
-        <div className="mainCont03">
-            test03
+        <div className={styles.mainCont03}>
+            profile area
         </div>
-        <div className="mainCont04">
-            test04
+        <div className={styles.mainCont04}>
+            board area
         </div>
-        <div className="mainCont05">
-            test05
+        <div className={styles.mainCont05}>
+             consult area
         </div>
         <Footer></Footer>
     </>;
