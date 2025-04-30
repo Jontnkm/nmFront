@@ -1,6 +1,14 @@
-import st from '../modules/header.module.scss';
+import { useEffect } from 'react';
+import st from '../modules/header.module.scss'
 
 function HeaderMain() {
+    useEffect(() => {
+        const header = document.querySelector('.cptHeader');
+        window.addEventListener('scroll', function(){
+            
+        })
+    }, [])
+    
     return <>
         <div className={`${st.cptHeader} ${st.scroll}`}>
             <div className={st.inner}>
