@@ -1,5 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
+import './pages/modules/default.scss';
+import './pages/modules/mixin.scss';
+
 import Home from './pages/Home';
 
 import About from './pages/about/About';
@@ -18,8 +21,6 @@ import BoardDetail from './pages/memory/BoardDetail';
 
 import Consult from './pages/memory/Board';
 import Location from './pages/memory/Board';
-
-import './pages/modules/default.scss';
 
 function App() {
   return (

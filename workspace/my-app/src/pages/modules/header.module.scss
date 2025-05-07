@@ -5,7 +5,7 @@
 
     .inner {
         width:100%; max-width:1200px; margin:0 auto; position:relative; display:flex; flex-flow: row nowrap; align-items: center;justify-content: space-between;
-
+        
         .leftArea {
             a {
                 display:inline-block; padding: 30px 0;
@@ -56,15 +56,36 @@
         }
     }
 
-    &.scroll {
+    &.scroll3 {
         background:var(--fff); box-shadow:2px 2px 2px #ccc;
 
         a {
-            color:var(--t1) !important;
-
             img {
                 &.white {display:none !important;}
                 &.black {display:block !important;}
+            }
+        }
+
+        .rightArea {
+            > ul {
+                > li {
+                    > a {
+                        color:var(--t1) !important;
+                        & + div {
+                            > ul {
+                                > li {
+                                    > a {
+                                        color:var(--t2) !important;
+            
+                                        &:hover {
+                                            color:var(--fff) !important;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }

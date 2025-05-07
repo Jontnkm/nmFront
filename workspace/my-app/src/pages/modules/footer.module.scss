@@ -1,5 +1,83 @@
 .cptFooter {
     width:100%; background:var(--prm2); padding:80px 0; position:relative;
 
-    
+    .inner {
+        width:100%; max-width:1200px; margin:0 auto; display:flex; flex-flow:row nowrap; align-items:flex-start; justify-content:space-between;
+
+        .left {
+            > img {
+                display:inline-block; width:200px; margin-bottom:40px;
+            }
+
+            > p {
+                display:flex; flex-flow: row nowrap; align-items:center; justify-content: flex-start; font-size:16px; font-weight:500; line-height:1.4; margin-bottom:5px; 
+                > span {
+                    color:var(--fff);
+                    > em {
+                        color:var(--t3); margin-left:12px;
+                    }
+                }
+
+                &:first-of-type {
+                    > span {
+                        &:first-of-type {
+                            padding-right:20px; margin-right:20px; position:relative;
+
+                            &::after {
+                                content:''; position:absolute; top:50%; right:0px; width:1px; height:9px; background:var(--t3); transform:translateY(-50%); opacity: 0.3;
+                            }
+                        }
+                    }
+                }
+
+                &.cpryt {
+                    margin-bottom:0; margin-top:25px; color:var(--t3);
+                }
+            }
+        }
+
+        .right {
+            > .rightInner {
+                height:256px; display:flex; flex-flow: column; align-items:flex-start; justify-content: space-between;
+
+                > .snsLine {
+                    > ul {
+                        display:flex; flex-flow:row nowrap; align-items:center; justify-content: flex-start; gap:6px;
+
+                        > li {
+                            > a {
+                                display:block; width:50px; height:50px; border-radius:50%; background:var(--bg1);
+                            }
+
+                            &:first-of-type {
+                                > a {
+                                    background:var(--bg1) url(../../../public/images/common/ico_blog.svg)50% 50% no-repeat;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                > a {
+                                    background:var(--bg1) url(../../../public/images/common/ico_kakao.svg)50% 50% no-repeat;
+                                }
+                            }
+
+                            &:last-of-type {
+                                > a {
+                                    background:var(--bg1) url(../../../public/images/common/ico_instagram.svg)50% 50% no-repeat;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                > .policy {
+                    width:100%; text-align:right;
+                    
+                    > a {
+                        display:inline-block; width:max-content; font-size:16px; color:var(--fff); font-weight:600;
+                    }
+                }
+            }
+        }
+    }
 }
