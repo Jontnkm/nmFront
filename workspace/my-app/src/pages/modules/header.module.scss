@@ -5,8 +5,8 @@
 
     .inner {
         width:100%; max-width:1200px; margin:0 auto; position:relative; display:flex; flex-flow: row nowrap; align-items: center;justify-content: space-between;
-        @include media ('tablet') {
-            max-width:100%;
+        @media screen and (max-width:1200px) {
+            max-width:100%; padding: 0 20px;
         }
         .leftArea {
             a {
@@ -21,6 +21,9 @@
         }
 
         .rightArea {
+            @media screen and (max-width:1200px) {
+                display:none;
+            }
             > ul {
                 display:flex; flex-flow:row nowrap; align-items: center ;justify-content: flex-start; gap:100px;
                 > li {
@@ -56,9 +59,85 @@
                 }
             }
         }
+
+        .moMenu {
+            display:none;
+            @media screen and (max-width:1200px) {
+                display:block
+            }
+
+            > a {
+                > img {
+                    &.moMenuBtnPc {
+                        display:block;
+                    }
+                    &.moMenuBtnMo {
+                        display:none;
+                    }
+                }
+            }
+        }
     }
 
-    &.scroll3 {
+    .moMenuList {
+        position:fixed; top:94px; left:0; width:100%; height:100dvh; background:var(--fff);
+        display:none;
+        &.on {
+            display:block;
+        }
+
+        > ul {
+            display:flex; flex-flow: column; align-items: flex-start; justify-content: flex-start;
+
+            > li {
+                position:relative; width:100%;
+
+                > a {
+                    position:relative; display:block; width:100%; padding:20px; border-bottom:1px solid var(--l1); font-size:18px; color:var(--t1); font-weight:600; line-height:1.5; transition:all 0.4s;
+
+                    &::after {
+                        content:''; position:absolute; top:50%; right:20px; transform:translateY(-50%); background:url(../../../public/images/common/moMenuArrow.svg)0 0 no-repeat; width:30px; height:30px;
+                    }
+                }
+
+                > div {
+                    width:100%; position:relative; border-bottom:1px solid var(--l1); padding:20px; display:none;
+                    > ul {
+                        display:flex; flex-flow: column; align-items: flex-start; justify-content: flex-start; gap:30px;
+
+                        > li {
+                            > a {
+                                position:relative; display:block; width:100%; font-size:18px; color:var(--t1); font-weight:600; line-height:1.5;
+                            }
+                        }
+                    }
+                }
+
+                &.active {
+                    > a {
+                        background:#0f2f54; color:var(--fff);
+                        &::after {
+                            background: url(../../../public/images/common/moMenuArrow_wht.svg)0 0 no-repeat; transform:translateY(-50%), rotate(180deg);
+                        }
+                    }
+                    > div {
+                        display:block;
+                    }
+                }
+
+                &:hover {
+                    > a {
+                        background:#0f2f54; color:var(--fff); 
+                        &::after {
+                            background: url(../../../public/images/common/moMenuArrow_wht.svg)0 0 no-repeat; transform:translateY(-50%), rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.scroll {
         background:var(--fff); box-shadow:2px 2px 2px #ccc;
 
         a {
@@ -86,6 +165,19 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+
+        .moMenu {
+            > a {
+                > img {
+                    &.moMenuBtnPc {
+                        display:none;
+                    }
+                    &.moMenuBtnMo {
+                        display:block;
                     }
                 }
             }

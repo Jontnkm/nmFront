@@ -1,7 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-
 import './pages/modules/default.scss';
-import './pages/modules/mixin.scss';
 
 import Home from './pages/Home';
 
@@ -21,6 +19,8 @@ import BoardDetail from './pages/memory/BoardDetail';
 
 import Consult from './pages/memory/Board';
 import Location from './pages/memory/Board';
+
+
 
 function App() {
   return (

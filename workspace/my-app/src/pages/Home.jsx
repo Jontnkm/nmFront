@@ -64,20 +64,24 @@ function Home() {
                                     Better ideas<br/>
                                     Higher ideals
                                 </p>
-                                <a href="javascript:void(0)">
+                                <a href="javascript:void(0)" className={`${st.aboutLink} ${st.forPc}`}>
                                     낭만에 대하여
                                 </a>
                             </div>
                         </div>
+                        <a href="javascript:void(0)" className={`${st.aboutLink} ${st.forMo}`}>
+                            낭만에 대하여
+                        </a>
                     </div>
                 </div>
+
                 <div className={st.mainCont04}>
                     <div className={st.contTitArea}>
                         <div className={st.left}>
                             <div className={st.eyeBrow}>Blog</div>
                             <div className={st.title}>전문가가 전하는 세무 지식</div>
                         </div>
-                        <div className={st.right}>
+                        <div className={`${st.right} ${st.forPc}`}>
                             <a href="javascript:void(0)" className={st.detailBtn}>전체 블로그 보러가기</a>
                         </div>
                     </div>
@@ -130,7 +134,12 @@ function Home() {
                             </li>
                         </ul>
                     </div>
+
+                    <div className={`${st.right} ${st.forMo}`}>
+                        <a href="javascript:void(0)" className={st.detailBtn}>전체 블로그 보러가기</a>
+                    </div>
                 </div>
+
                 <div className={comm.consultBox}>
                     <div className={comm.inner}>
                         <div className={comm.left}>

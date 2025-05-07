@@ -10,7 +10,7 @@ function HeaderMain() {
     }, [])
     
     return <>
-        <div className={`${st.cptHeader} ${st.scroll}`}>
+        <div className={st.cptHeader}>{/* 스크롤시 scroll 클래스 추가 */}
             <div className={st.inner}>
                 <div className={st.leftArea}>
                     <a href="javascript:void(0)" className={st.logoBox}>
@@ -72,6 +72,68 @@ function HeaderMain() {
                         </li>
                     </ul>
                 </div>
+
+                <div className={st.moMenu}>
+                    <a href="javascript:void(0);">
+                        <img src="/images/common/ico_moMenu.svg" alt="" className={st.moMenuBtnPc}/>
+                        <img src="/images/common/ico_moMenu_blk.svg" alt="" className={st.moMenuBtnMo}/>
+                    </a>
+                </div>
+            </div>
+
+            <div className={st.moMenuList}>{/* on 클래스 추가 시 메뉴 오픈 */}
+                <ul>
+                    <li className={st.active}>
+                        <a href="javascript:void(0)">낭만에 대하여</a>
+                        <div className={st.dropDown}>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">기업문화</a></li>
+                                <li><a href="javascript:void(0)">협력 전문가</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">서비스</a>
+                        <div className={st.dropDown}>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">기업문화</a></li>
+                                <li><a href="javascript:void(0)">협력 전문가</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">전문업종</a>
+                        <div className={st.dropDown}>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">기업문화</a></li>
+                                <li><a href="javascript:void(0)">협력 전문가</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">낭만의 기억</a>
+                        <div className={st.dropDown}>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">기업문화</a></li>
+                                <li><a href="javascript:void(0)">협력 전문가</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">문의하기</a>
+                        <div className={st.dropDown}>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us</a></li>
+                                <li><a href="javascript:void(0)">기업문화</a></li>
+                                <li><a href="javascript:void(0)">협력 전문가</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </>;
