@@ -5,7 +5,9 @@
 
     .inner {
         width:100%; max-width:1200px; margin:0 auto; position:relative; display:flex; flex-flow: row nowrap; align-items: center;justify-content: space-between;
-        
+        @include media ('tablet') {
+            max-width:100%;
+        }
         .leftArea {
             a {
                 display:inline-block; padding: 30px 0;
