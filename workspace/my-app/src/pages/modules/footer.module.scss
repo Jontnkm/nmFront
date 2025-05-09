@@ -34,11 +34,23 @@
 
                 &:first-of-type {
                     > span {
-                        &:first-of-type {
-                            padding-right:20px; margin-right:20px; position:relative;
+                        padding-right:20px; margin-right:20px; position:relative;
 
+                        &::after {
+                            content:''; position:absolute; top:50%; right:0px; width:1px; height:9px; background:var(--t3); transform:translateY(-50%); opacity: 0.3;
+                        }
+                        
+                        &:last-of-type {
                             &::after {
-                                content:''; position:absolute; top:50%; right:0px; width:1px; height:9px; background:var(--t3); transform:translateY(-50%); opacity: 0.3;
+                                display:none;
+                            }
+                        }
+
+                        @include media ('moDeep') {
+                            &:nth-of-type(2) {
+                                &::after {
+                                    display:none;
+                                }
                             }
                         }
                     }
@@ -46,6 +58,25 @@
 
                 &.cpryt {
                     margin-bottom:0; margin-top:25px; color:var(--t3);
+                }
+
+                @include media ('mobile') {
+                    flex-flow:row wrap; gap:5px 0;
+                }
+
+                &.address {
+                    span {
+                        display:flex; flex-flow :row nowrap; align-items: flex-start; justify-content: flex-start;
+                        em {
+                            &:first-of-type {
+                                width:35px; color:var(--fff); margin-left:0;
+                            }
+
+                            &:last-of-type {
+                                word-break:keep-all;
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -97,6 +128,59 @@
                     
                     > a {
                         display:inline-block; width:max-content; font-size:16px; color:var(--fff); font-weight:600;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cptQuick {
+    position:fixed; bottom:30px; right:30px;
+
+    .inner {
+        position:relative;
+
+        .quickList {
+
+            > ul {
+                display:flex; flex-flow :column; align-items: flex-end; justify-content: flex-start; gap:6px;
+
+                > li {
+                    > a {
+                        display:block; text-align:center; background-size:100% 100%;
+                        &.consult {
+                            width:70px; height:70px;
+                            background: url(../../../public/images/common/quick_consult.png)50% 50% no-repeat;
+                        }
+                        &.naver {
+                            width:50px; height:50px;
+                            background: url(../../../public/images/common/quick_naver.png)50% 50% no-repeat;
+                        }
+                        &.kakao {
+                            width:50px; height:50px;
+                            background: url(../../../public/images/common/quick_kakao.png)50% 50% no-repeat;
+                        }
+                        &.instagram {
+                            width:50px; height:50px;
+                            background: url(../../../public/images/common/quick_instagram.png)50% 50% no-repeat;
+                        }
+                        &.top {
+                            width:50px; height:50px;
+                            background: url(../../../public/images/common/quick_top.png)50% 50% no-repeat;
+                        }
+                    }
+
+                    @include media ('mobile') {
+                        &:nth-of-type(2) {
+                            display:none;
+                        }
+                        &:nth-of-type(3) {
+                            display:none;
+                        }
+                        &:nth-of-type(4) {
+                            display:none;
+                        }
                     }
                 }
             }

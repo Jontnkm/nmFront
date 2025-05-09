@@ -1,0 +1,70 @@
+@charset "UTF-8";
+@import './mixin.scss';
+
+.cptTable {
+    width:100%; margin-top:100px;
+    @include media ('mobile') {
+        margin-top:60px;
+    }
+    > .tbData {
+        width:100%; border-collapse:collapse; 
+
+        @include media ('mobile') {
+            display:block; width:100%; table-layout:fixed;
+        }
+
+        thead {
+            @include media ('mobile') {
+                display:none;
+            }
+            tr {
+                
+                th {
+                    background: var(--bg2); border-top:1px solid var(--l1); border-bottom:1px solid var(--l1); font-size:15px; font-weight:600; padding:18px 0; text-align:center; line-height:1;  color:var(--t6);
+
+                    &.left {
+                        text-align:left;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            @include media ('mobile') {
+                display:block; border-top:1px solid var(--l1);
+            }
+            tr {
+                @include media ('mobile') {
+                    position:relative; width:100%; display:flex; flex-flow: row wrap; justify-content: flex-start; border-bottom:1px solid var(--l1); padding-bottom:15px;
+                }
+                td {
+                    background: var(--fff); border-bottom:1px solid var(--l1); font-size:17px; font-weight:500; padding:18px 0; text-align:center; line-height:1; color:var(--t1);
+
+                    &.left {
+                        text-align:left;
+                    }
+
+                    @include media ('mobile') {
+                        display:block; border:0; padding: 15px 0 0 0; color:var(--l3); line-height:1.5;
+
+                        &:first-of-type {
+                            display:none;
+                        }
+
+                        &:nth-of-type(2) {
+                            width:100%; color:var(--t1);
+                        }
+
+                        &:nth-of-type(3) {
+                            position:relative; padding-right:15px; margin-right:15px;
+
+                            &::after {
+                                content:''; position:absolute; bottom:7px; right:0; width:1px; height:12px; background:#000;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
