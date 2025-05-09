@@ -1,20 +1,186 @@
+@charset "UTF-8";
+@import './mixin.scss';
+
+/*서브페이지 레이아웃 공통*/
+.subPageTitle {
+    width:100%; max-width:1200px; margin:0 auto; position:relative; display:flex; flex-flow: row nowrap; align-items: flex-start; justify-content: space-between;  background:var(--fff);
+    @include media ('tablet') {
+        max-width:100%; width:calc(100% - 40px); flex-flow:column;
+    }
+    > p.pageTit {
+        font-size:50px; font-weight:700; line-height:1; color:var(--snd1);
+        @include media ('tablet') {
+            font-size:26px; order:1;
+        }
+
+        > span.pageDesc {
+            display:block; font-size:22px; font-weight:600; line-height:1.5; color:var(--t1); margin-top:30px;
+            @include media ('mobile') {
+                font-size:16px; word-break:keep-all; margin-top:15px;
+            }
+        }
+
+        &.detail {
+            font-size:22px; padding: 120px 100px 0;
+            @include media ('mobile') {
+                padding: 20px 0 0 0;
+            }
+        }
+    }
+
+    > .breadCrumb {
+        position:relative;
+        @include media ('tablet') {
+            order:0; width:100%;
+        }
+
+        @include media ('mobile') {
+            margin-bottom:30px; width:100%;
+        }
+        > ul {
+            display:flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; gap:12px;
+            @include media ('tablet') {
+                justify-content: end;
+            }
+            > li {
+                padding-right:18px; position:relative;
+
+                &::after {
+                    content:''; position:absolute; top:50%; right:0; width:6px; height:9px; background:url(../../../public/images/common/ico_breadcrumb.svg)100% 100% no-repeat; transform:translateY(-50%) rotate(180deg);
+                }
+
+                > a {
+                    font-size:14px; font-weight:500; line-height:1.5;
+                    @include media ('tablet') {
+                        font-size:12px;
+                    }
+                }
+
+                &.depth01 {
+                    > a {
+                        color:var(--t2);
+                    }
+                }
+
+                &.depth02 {
+                    > a {
+                        color:var(--t1);
+                    }
+                }
+
+                &:last-of-type {
+                    padding-right:0;
+
+                    &::after {
+                        display:none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*서브페이지 컨텐츠 공통 레이아웃*/
+.contents {
+    position:relative; width:100%;
+
+    > .inner {
+        width:100%; max-width:1200px; margin:0 auto;
+        @include media ('tablet') {
+            max-width:100%; width:calc(100% - 40px);
+        }
+    }
+}
+
+/*페이징*/
+.pagination {
+    margin-top:50px;
+
+    > ul {
+        display:flex; flex-flow: row nowrap; align-items: center; justify-content: center;
+
+        > li {
+            width:32px; height:32px;
+            > a {
+                display:inline-block; padding:11px 12px 9px; width:32px; height:32px;
+            }
+
+            &:nth-of-type(2) {
+                padding:0; width:auto !important;
+            }
+
+            &:last-of-type {
+                > a {
+                    img {
+                        display:block; transform:rotate(180deg);
+                    }
+                }
+            }
+
+            &.numbers {
+                > ul {
+                    display:flex; flex-flow: row nowrap; align-items: center; justify-content: center;
+
+                    > li {
+                        position:relative; width:32px; height:32px;
+
+                        >  a {
+                            display:inline-block; width:32px; height:32px; padding:10px 12px; text-align:center; font-size:14px; font-weight:500; line-height:1; color:var(--t5); transition:all 0.2s;
+
+                            &:hover {
+                                background:var(--snd1); font-weight:500; color:var(--fff); border-radius:4px;
+                            }
+                        }
+
+                        &.active {
+                            > a {
+                                background:var(--snd1); font-weight:500; color:var(--fff); border-radius:4px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*상담신청 공통*/
 .consultBox {
     width:100%; position:relative; padding:120px 0; background:url(../../../public/images/common/consult_img01.png)100% 100% no-repeat;
-
+    @include media(tablet) {
+        padding:60px 0; background:url(../../../public/images/common/consult_img01.png)50% 50% no-repeat;
+    }
+    @include media(tablet) {
+        background:url(../../../public/images/common/consult_img01_mo.png)100% 100% no-repeat; background-size:cover;
+    }
     .inner {
         display:flex; flex-flow: row nowrap; align-items: center; justify-content: space-between; width:100%; max-width:1200px; margin:0 auto;
-
+        @include media(tablet) {
+            max-width:100%; width:91.75%; margin:0 auto;
+        }
+        @include media(mobile) {
+            flex-flow: column nowrap; align-items: center; justify-content: center; padding:0 20px;
+        }
         .left {
             .eyeBrow {
                 font-size:22px; color:var(--fff); font-weight:700; line-height:1.4; text-align:left; margin-bottom:5px;
+                @include media(mobile) {
+                    font-size:15px; margin-bottom:5px; text-align:center;
+                }
             }
         
             .title {
                 font-size:50px; color:var(--fff); font-weight:700; line-height:1.4; text-align:left; margin-bottom:20px;
+                @include media(mobile) {
+                    font-size:25px; margin-bottom:30px; text-align:center;
+                }
             }
 
             .desc {
                 font-size:18px; color:var(--t2); font-weight:500; line-height:1.4; text-align:left;
+                @include media(mobile) {
+                    font-size:16px; width:60%; margin: 0 auto 30px; text-align:center; word-break:keep-all;
+                }
             }
         }
 

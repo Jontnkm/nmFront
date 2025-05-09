@@ -1,6 +1,24 @@
+@charset "UTF-8";
+@import './mixin.scss';
+
 .wrap {
     width:100%;
     > .container {
         width:100%; max-width:1920px; margin: 0 auto;
+
+        > .subLayout {
+            padding: 120px 0;
+            @include media ('tablet') {
+                padding:40px 0 80px;
+            }
+        }
+    }
+
+    &.detail {
+        background:var(--bg3);
+
+        .subLayout {
+            padding:0;
+        }
     }
 }

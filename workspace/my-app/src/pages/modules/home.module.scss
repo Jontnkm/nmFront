@@ -1,13 +1,14 @@
 @charset "UTF-8";
+@import './mixin.scss';
 
 .mainCont01 {
     display:block; width:100%; height:100%; z-index:1;
-    @media screen and (max-width:1200px) {
+    @include media ('mobile') {
         position:relative;
     }
     > .inner {
         width:100%; height:100dvh; overflow:hidden;
-        @media screen and (max-width:1200px) {
+        @include media ('mobile') {
             width:100dvh; height:auto;
         }
         > img {
@@ -16,20 +17,20 @@
     }
 
     .mvTxt {
-        position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;
-        @media screen and (max-width:1200px) {
+        width:100%; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); z-index:3;
+        @include media ('mobile') {
             top:120px; transform:translateX(-50%); width:100%;
         }
         > .mvTitle {
             font-size:65px; line-height:1.4; letter-spacing:-0.65px; text-align:center; margin-bottom:3rem; font-weight:700; color:var(--fff);
-            @media screen and (max-width:1200px) {
+            @include media ('mobile') {
                 font-size:32px; width:100%;
             }
         }
 
         > .mvDesc {
             font-size:22px; font-weight:600; line-height:1.4; letter-spacing:-0.22px; color:var(--t8); text-align:center;
-            @media screen and (max-width:1200px) {
+            @include media ('mobile') {
                 font-size:16px; width:100%; font-weight:500; line-height:2;
             }
         }
@@ -38,7 +39,7 @@
 
     .scrollDown {
         position:absolute; bottom:50px; left:50%; transform:translateX(-50%);
-        @media screen and (max-width:1200px) {
+        @include media ('tablet') {
             bottom:30px;
         }
         > .scTxt {
@@ -59,20 +60,20 @@
 
 .mainCont02 {
     padding: 120px 0;
-    @media screen and (max-width:1200px) {
+    @include media ('tablet') {
         padding:60px 0;    
     }
 
     .eyeBrow {
         font-size:22px; color:var(--snd1); font-weight:700; line-height:1.4; text-align:center; margin-bottom:5px;
-        @media screen and (max-width:1200px) {
+        @include media ('tablet') {
             font-size:15px;
         }
     }
 
     .title {
         font-size:50px; color:var(--t1); font-weight:700; line-height:1; text-align:center; margin-bottom:50px;
-        @media screen and (max-width:1200px) {
+        @include media ('tablet') {
             font-size:25px;
         }
     }
@@ -118,13 +119,13 @@
 
     .inner {
         display:flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start;
-        @media screen and (max-width:1200px) {
+        @include media ('tablet') {
             flex-flow:column;
         }
 
         > .leftArea {
             width:960px; overflow:hidden;
-            @media screen and (max-width:1200px) {
+            @include media ('tablet') {
                 width:calc(100% - 40px); text-align: center; overflow:hidden;  order:1;
 
                 > img {
@@ -135,17 +136,17 @@
 
         > .rightArea {
             width:calc(100% - 960px); overflow:hidden; position:relative; height:900px;
-            @media screen and (max-width:1200px) {
+            @include media ('tablet') {
                 width:100%; order:0; height:auto;
             }
             > .profTit {
                 position:absolute; top:50%; left:100px; transform:translateY(-50%);
-                @media screen and (max-width:1200px) {
+                @include media ('tablet') {
                     position:relative; top:auto; left:auto; transform:none;
                 }
                 .txt {
                     font-size:80px; font-weight:700; line-height:1.5; color:var(--t1); margin-bottom:80px;
-                    @media screen and (max-width:1200px) {
+                    @include media ('tablet') {
                         font-size:38px; text-align:center; margin-bottom:30px;
                     }
                 }
@@ -154,7 +155,7 @@
 
         .aboutLink {
             display:inline-block; position:relative; min-width:180px; height:50px; line-height:50px; padding: 0 15px; border:1px solid var(--snd1); font-size: 16px; font-weight:600; color:var(--snd1);
-            @media screen and (max-width:1200px) {
+            @include media ('tablet') {
                 order:2; margin-top:30px;
             }
             &::after {
@@ -174,13 +175,13 @@
             }
 
             &.forPc {
-                @media screen and (max-width:1200px) {
+                @include media ('tablet') {
                     display:none;
                 }
             }
             &.forMo {
                 display:none;
-                @media screen and (max-width:1200px) {
+                @include media ('tablet') {
                     display:inline-block;
                 }
             }
@@ -190,25 +191,34 @@
 
 .mainCont04 {
     width:100%; padding:120px 0;
-    @media screen and (max-width:1200px) {
-        padding:60px 0;
+    @include media ('tablet') {
+        padding:60px 0; width:calc(100% - 40px); margin:0 auto;
     }
     .contTitArea {
         display:flex; flex-flow: row nowrap; align-items:end; justify-content: space-between; width:100%; max-width:1200px; margin:0 auto 50px;
-        @media screen and (max-width:1200px) {
-            padding:60px 0;
+        @include media ('tablet') {
+            display:block; margin-bottom:30px;
         }
         .left {
             .eyeBrow {
                 font-size:22px; color:var(--snd1); font-weight:700; line-height:1.4; text-align:left; margin-bottom:5px;
+                @include media ('tablet') {
+                    font-size:15px; text-align:center;
+                }
             }
         
             .title {
                 font-size:50px; color:var(--t1); font-weight:700; line-height:1; text-align:left;
+                @include media ('tablet') {
+                    font-size:25px; text-align:center;
+                }
             }
         }
 
         .right {
+            @include media ('tablet') {
+                display:none;
+            }
             > a {
                 position:relative; width:max-content; display:inline-block; border-bottom:1px solid var(--l3); padding-bottom:12px; font-size: 16px; font-weight:600; line-height:1.4;
                 
@@ -228,24 +238,60 @@
 
     .contInner {
         width:100%; max-width:1200px; margin:0 auto;
-
+        @include media ('tablet') {
+            max-width:100%;
+        }
         > ul {
             display:flex; flex-flow: row nowrap; align-items: center; justify-content: flex-start; gap:20px;
+            @include media ('tablet') {
+                flex-flow:row wrap;
+            }
 
             > li {
                 position:relative; width: calc(25% - 15px);
-
+                @include media ('tablet') {
+                    width:calc(50% - 15px); overflow:hidden;
+                }
                 > a {
                     display:block;
+                    @include media ('tablet') {
+                        position:relative;
+
+                        > img {
+                            display:block; width:100%;
+                        }
+                    }
 
                     > p.title {
                         font-size:17px; font-weight:600; line-height:1.4; letter-spacing:-0.34px; margin:15px 0 30px; text-align:left; width:100%; overflow:hidden; text-overflow:ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; word-break:keep-all;
+                        @include media ('tablet') {
+                            margin:15px auto 10px; font-size:15px;
+                        }
                     }
 
                     > p.date {
                         font-size:15px; font-weight:400; line-height:1.4; color:var(--t4); letter-spacing:-0.3px;
                     }
+                    
                 }
+            }
+        }
+    }
+
+    > .right {
+        text-align:center; margin-top:40px;
+        > a {
+            position:relative; width:max-content; display:inline-block; border-bottom:1px solid var(--l3); padding-bottom:12px; font-size: 16px; font-weight:600; line-height:1.4;
+            
+            &::after {
+                 content:''; position:absolute; bottom:0px; left:0; width:0; height:1px; background:var(--snd1); transition:all 0.4s;
+            }
+
+            &:hover {
+                color:var(--snd1);
+                &::after {
+                    width:100%;
+                }    
             }
         }
     }
