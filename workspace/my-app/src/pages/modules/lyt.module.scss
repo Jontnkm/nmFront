@@ -9,7 +9,99 @@
         > .subLayout {
             padding: 120px 0;
             @include media ('tablet') {
-                padding:40px 0 80px;
+                padding:30px 0 60px;
+            }
+        }
+
+        > .specSubVisual {
+            width:100%; position:relative; height:550px;
+
+            &.type01 {
+                 background:url(../../../public/images/sub/subVisual01.png) 0 0 no-repeat;
+            }
+
+            &.type02 {
+                 background:url(../../../public/images/sub/subVisual02.png) 0 0 no-repeat;
+            }
+
+            &.type03 {
+                 background:url(../../../public/images/sub/subVisual03.png) 0 0 no-repeat;
+            }
+
+            @include media ('tablet'){
+                height:300px;
+                background-position:center bottom !important;
+            }
+
+            @include media ('mobile'){
+                &.type01 {
+                    background:url(../../../public/images/sub/subVisual01_mo.png) 0 0 no-repeat;
+                }
+
+                &.type02 {
+                    background:url(../../../public/images/sub/subVisual02_mo.png) 0 0 no-repeat;
+                }
+
+                &.type03 {
+                    background:url(../../../public/images/sub/subVisual03_mo.png) 0 0 no-repeat;
+                }
+
+                height:310px; background-position:100% 100% !important; background-size:cover !important;
+            }
+
+            > div {
+                position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+
+                > .breadCrumb {
+                    position:relative; margin-bottom:10px;
+
+                    > ul {
+                        display:flex; flex-flow: row nowrap; align-items: center; justify-content: center; gap:12px;
+
+                        > li {
+                            padding-right:18px; position:relative;
+
+                            &::after {
+                                content:''; position:absolute; top:50%; right:0; width:6px; height:9px; background:url(../../../public/images/common/ico_breadcrumb.svg)100% 100% no-repeat; transform:translateY(-50%) rotate(180deg);
+                            }
+
+                            > a {
+                                font-size:14px; font-weight:500; line-height:1.5;
+                                @include media ('mobile') {
+                                    font-size:12px;
+                                }
+                            }
+
+                            &.depth01 {
+                                > a {
+                                    color:var(--t2);
+                                }
+                            }
+
+                            &.depth02 {
+                                > a {
+                                    color:var(--fff);
+                                }
+                            }
+
+                            &:last-of-type {
+                                padding-right:0;
+
+                                &::after {
+                                    display:none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                > .title {
+                    font-size:50px; color:var(--fff); font-weight:700; line-height:1.5;
+
+                    @include media ('mobile') {
+                        font-size:32px;
+                    }
+                }
             }
         }
     }
@@ -21,4 +113,6 @@
             padding:0;
         }
     }
+
+
 }

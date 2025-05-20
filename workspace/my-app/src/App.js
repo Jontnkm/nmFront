@@ -17,8 +17,8 @@ import Education from './pages/special/Education';
 import Board from './pages/memory/Board';
 import BoardDetail from './pages/memory/BoardDetail';
 
-import Consult from './pages/memory/Board';
-import Location from './pages/memory/Board';
+import Consult from './pages/customer/Consult';
+import Location from './pages/customer/Location';
 
 
 
