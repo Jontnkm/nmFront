@@ -28,7 +28,10 @@
                     position:relative;
 
                     > img {
-                        display:block; width:100%;
+                        display:block; width:387px;
+                        @include media ('tablet') {
+                            width:100%; 
+                        }
                     }
                 }
 
